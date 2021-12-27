@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int nro;
+    double valor;
+} Tipo_Dado;
+
+Tipo_Dado *cria_tabela(void)
+{
+     Tipo_Dado *T;
+     int tamanho;
+
+     printf("Quantos elementos: ");
+     scanf("%d",&tamanho);
+
+     T=calloc(tamanho,sizeof(Tipo_Dado));
+     return(T);
+}
+
+int main()
+{
+    Tipo_Dado *Tabela;
+
+    Tabela=cria_tabela();
+    Tabela[0].nro = 123;
+    (*Tabela).nro = 456;
+    Tabela->nro   = 789;
+
+    printf("Valor: %d\n",Tabela[0].nro);
+    system("pause");
+
+    return 0;
+}

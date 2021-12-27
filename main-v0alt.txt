@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int nro;
+    double valor;
+} Tipo_Dado;
+
+// Global
+Tipo_Dado Tabela[100];                             // Alocacao Estatica - GLOBAL
+
+int main()
+{
+	
+    Tabela[0].nro = 123;
+    (*Tabela).nro = 456;
+    Tabela->nro   = 789;
+
+    printf("Valor: %d\n",Tabela[0].nro);
+    system("pause");
+
+    return 0;
+}
